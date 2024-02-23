@@ -4,12 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-interface LinkProps {
-  // eslint-disable-next-line no-unused-vars
-  setOpen: (open: boolean) => void;
-}
-
-const Menu = ({ setOpen }: LinkProps) => {
+const Menu = ({ setOpen }: any) => {
   const pathName = usePathname();
 
   return (
