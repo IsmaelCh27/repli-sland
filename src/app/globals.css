@@ -4,24 +4,67 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 2, 7, 16;
+  --background-end-rgb: 2, 7, 16;
+  font-size: 62.5%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 2, 7, 16;
+    --background-end-rgb: 2, 7, 16;
+    font-size: 62.5%;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+.shadow-custom:hover {
+  text-shadow:
+    0 0 0.5em #ffffff,
+    0 0 1em #ffffff,
+    0 0 1.5em #ffffff;
+}
+
+.box-shadow-custom:hover {
+  filter: drop-shadow(4px -2px 7px rgba(255, 255, 255, 0.7));
+}
+
+.archive-shadow-active {
+  z-index: 10;
+  box-shadow:
+    6px 2px 22px #a4adfc,
+    -6px 2px 22px #a4adfc;
+  cursor: pointer;
+}
+
+.archive-shadow-custom:hover {
+  z-index: 10;
+  box-shadow:
+    6px 2px 22px #a4adfc,
+    -6px 2px 22px #a4adfc;
+  cursor: pointer;
+}
+
+.text-shadow-custom {
+  text-shadow:
+    0 0 18rem #d1aeff,
+    0 0 14rem #ccb1ec88;
+}
+
+.parent[data-isOpen='true'] {
+  width: 400px;
+  height: 500px;
 }
